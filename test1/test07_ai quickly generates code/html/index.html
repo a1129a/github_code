@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>响应式导航栏</title>
+<style>
+  /* 设置导航栏的样式 */
+  .navbar {
+    max-width: 100%; /* 最大宽度 */
+    height: 60px; /* 高度 */
+    background-color: #D7719B; /* 背景颜色 */
+    margin: 0 auto; /* 居中显示 */
+    display: flex;
+    justify-content: flex-end; /* 导航区域对齐到右侧 */
+    align-items: center;
+  }
+
+  /* 设置导航区域的样式 */
+  .nav-area {
+    height: 60px; /* 高度 */
+    width: 100%; /* 宽度占满整个导航栏 */
+    display: flex; /* 使用flex布局 */
+  }
+
+  /* 设置每个导航菜单项的样式 */
+  .nav-item {
+    flex: 1; /* 每个菜单项都占有相同的空间 */
+    text-align: center; /* 文字居中对齐 */
+    line-height: 60px; /* 文字垂直居中 */
+    font-size: 24px; /* 字体大小 */
+    color: white; /* 链接颜色 */
+    text-decoration: none; /* 去除链接下划线 */
+    transition: background-color 0.3s; /* 背景颜色变化过渡效果 */
+    position: relative; /* 设置相对定位，为动画做准备 */
+  }
+  @keyframes jump {
+    0%, 100% { transform: translateY(0); } /* 动画开始和结束时，元素在原位置 */
+    50% { transform: translateY(-10px); } /* 动画中间状态，元素向上移动10像素 */
+  }
+
+  /* 鼠标悬停时改变背景颜色 */
+  .nav-item:hover {
+    animation:  jump 0.5s ease; /* 添加动画效果 */
+
+    background-color: orange; /* 悬停时的背景颜色 */
+  }
+  /* 设置页面的基本样式 */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  /* 设置头部元素的样式 */
+  .header {
+    width: 100%; /* 宽度为100% */
+    height: 700px; /* 高度为700px */
+    background-image: url("../img/001\ \(10\).jpg"); /* 设置背景图 */
+    background-size: cover; /* 背景图覆盖整个元素 */
+    background-position: center; /* 背景图居中显示 */
+    margin: 0 auto; /* 左右居中布局 */
+    margin-bottom: 30px; /* 下边距30px */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+  }
+
+/* 设置内容区域的样式 */
+.content-area {
+    width: 100%; /* 宽度为100% */
+    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+  }
+
+  /* 设置层的样式 */
+  .layer {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 两端对齐，项目之间的间隔相等 */
+    margin-bottom: 30px; /* 层与层之间的下边距 */
+  }
+
+  /* 设置卡片的样式 */
+  .card {
+    width: 25%; /* 卡片宽度 */
+    height: 500px; /* 卡片高度 */
+    background-color: white; /* 背景颜色 */
+    border: 1px solid grey; /* 边框 */
+    border-radius: 10px; /* 四角圆润 */
+    margin-top: 30px; /* 上边距 */
+    margin-bottom: 30px; /* 下边距 */
+    margin-left: 30px; /* 左边距 */
+    margin-right: 30px; /* 右边距 */
+    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 垂直排列 */
+  }
+
+  /* 设置卡片中的图片样式 */
+  .card img {
+    width: 100%; /* 图片宽度占满卡片 */
+    height: 50%; /* 图片高度为卡片的一半 */
+    border-top-left-radius: 10px; /* 左上角圆角 */
+    border-top-right-radius: 10px; /* 右上角圆角 */
+  }
+
+  /* 设置卡片中的标题样式 */
+  .card .title {
+    font-size: 24px; /* 标题字体大小 */
+    margin: 10px; /* 标题边距 */
+  }
+
+  /* 设置卡片中的文字描述样式 */
+  .card .description {
+    font-size: 16px; /* 描述字体大小 */
+    margin: 10px; /* 描述边距 */
+  }
+
+
+
+
+   /* 设置特色区域的样式 */
+   .featured-area {
+    width: 100%; /* 宽度为100% */
+    height: 300px; /* 高度为300px */
+    background-image: url('path-to-your-background-image.jpg'); /* 背景图片 */
+    background-size: cover; /* 背景图片覆盖整个区域 */
+    background-position: center; /* 背景图片居中 */
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    padding-left: 50px; /* 内左边距50px */
+    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+  }
+
+  /* 设置特色区域中的文字样式 */
+  .featured-text {
+    color: white; /* 文字颜色 */
+    /* 其他文字样式 */
+  }
+
+  /* 设置页脚的样式 */
+  .footer {
+    width: 100%; /* 宽度为100% */
+    height: 100px; /* 高度为100px */
+    background-color: #D7719B; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-top: 30px; /* 与上方区域的间隔30px */
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<div class="navbar">
+  <!-- 导航区域 -->
+  <div class="nav-area">
+    <!-- 导航菜单项 -->
+    <a href="#home" class="nav-item">首页</a>
+    <a href="#about" class="nav-item">关于</a>
+    <a href="#services" class="nav-item">服务</a>
+    <a href="#portfolio" class="nav-item">作品集</a>
+    <a href="#contact" class="nav-item">联系我们</a>
+  </div>
+</div>
+
+
+<!-- 页面头部元素 -->
+<div class="header">
+  <!-- 可以在这里添加更多内容 -->
+</div>
+
+<!-- 内容区域 -->
+<div class="content-area">
+  <!-- 第一层 -->
+  <div class="layer">
+    <!-- 卡片1 -->
+    <div class="card">
+      <img src="../img/001 (1).jpg" alt="Image Description">
+      <h2 class="title">标题1</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+    <!-- 卡片2 -->
+    <div class="card">
+      <img src="../img/001 (2).jpg" alt="Image Description">
+      <h2 class="title">标题2</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+    <!-- 卡片3 -->
+    <div class="card">
+      <img src="../img/001 (3).jpg" alt="Image Description">
+      <h2 class="title">标题3</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+  </div>
+  <!-- 第二层 -->
+  <div class="layer">
+    <!-- 卡片4 -->
+    <div class="card">
+      <img src="../img/001 (4).jpg" alt="Image Description">
+      <h2 class="title">标题4</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+    <!-- 卡片5 -->
+    <div class="card">
+      <img src="../img/001 (5).jpg" alt="Image Description">
+      <h2 class="title">标题5</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+    <!-- 卡片6 -->
+    <div class="card">
+      <img src="../img/001 (6).jpg" alt="Image Description">
+      <h2 class="title">标题6</h2>
+      <p class="description">这里是文字描述。</p>
+    </div>
+  </div>
+</div>
+<!-- 内容区域end -->
+
+
+
+
+
+<!-- 特色区域 -->
+<div class="featured-area">
+  <p class="featured-text">
+    这里是一些文字<br>
+    这里是更多的文字<br>
+    再多一些文字描述
+  </p>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+  © 版权所有
+</div>
+
+</body>
+</html>
