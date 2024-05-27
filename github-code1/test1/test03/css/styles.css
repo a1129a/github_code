@@ -189,3 +189,15 @@ li {
 }
 /* 内嵌网页结束 */
 /* 内容结束 */
+
+ /* 设置页脚的样式 */
+ .footer {
+    width: 100%; /* 宽度为100% */
+    height: 100px; /* 高度为100px */
+    background-color: #D7719B; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-top: 30px; /* 与上方区域的间隔30px */
+  }
