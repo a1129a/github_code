@@ -1,0 +1,54 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile {
+    flex: 0 0 calc(50% - 20px);
+    padding: 20px;
+}
+
+.profile img {
+    width: 100%;
+    height: auto;
+}
+
+.profile video {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.content {
+    flex: 1 0 calc(50% - 20px);
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .profile, .content {
+        flex: 1 1 calc(100% - 40px);
+    }
+}
+.p{
+    text-indent: 2em;
+
+}
