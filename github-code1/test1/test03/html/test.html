@@ -4,87 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人介绍</title>
+    <!-- 网站图标 -->
     <link rel="icon" href="../img/index01/001.ico" type="images/x-ico" />
-
+    <!-- 引入外部CSS样式表 -->
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- 如果需要引入外部JavaScript文件，在这里添加 -->
     <script src=""></script>
+	<style>
+		body{
+			background: url(../img/test/006\ \(2\).jpg) no-repeat center center fixed;
+		}
+/* 主要内容区域样式 */
+main {
+    padding: 20px;
+    background-color: #fff; /* 设置背景颜色为白色 */
+    border-radius: 8px; /* 添加圆角边框 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 添加阴影效果 */
+    max-width: 800px; /* 设置最大宽度 */
+    margin: 40px auto; /* 居中显示 */
+}
 
+/* 每个section的样式 */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #eaeaea; /* 添加底部边框线 */
+}
+
+/* 最后一个section没有底部边框 */
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* section标题样式 */
+section h1 {
+    font-size: 24px; /* 设置字体大小 */
+    color: #333; /* 设置字体颜色 */
+    margin-bottom: 10px; /* 设置标题下方的间距 */
+}
+
+/* section段落样式 */
+section p {
+    font-size: 16px; /* 设置字体大小 */
+    line-height: 1.6; /* 设置行高 */
+    color: #666; /* 设置字体颜色 */
+    margin-bottom: 15px; /* 设置段落之间的间距 */
+}
+
+/* 链接样式 */
+section a {
+    display: inline-block; /* 设置为块级元素 */
+    padding: 10px 15px; /* 设置内边距 */
+    background-color: #007bff; /* 设置背景颜色 */
+    color: #fff; /* 设置字体颜色 */
+    border-radius: 5px; /* 设置圆角 */
+    text-decoration: none; /* 去除下划线 */
+    margin-right: 10px; /* 设置右边距 */
+    transition: background-color 0.3s; /* 添加背景颜色过渡效果 */
+}
+
+/* 链接悬停效果 */
+section a:hover {
+    background-color: #0056b3; /* 悬停时改变背景颜色 */
+}
+
+/* 列表样式 */
+section ul {
+    list-style-type: none; /* 去除列表默认样式 */
+    padding-left: 0; /* 去除默认的内边距 */
+}
+
+/* 列表项样式 */
+section li {
+    background-color: #f8f9fa; /* 设置背景颜色 */
+    padding: 10px; /* 设置内边距 */
+    margin-bottom: 10px; /* 设置下边距 */
+    border-radius: 5px; /* 设置圆角 */
+}
+
+/* 列表项链接样式 */
+section li a {
+    color: #333; /* 设置字体颜色 */
+    text-decoration: none; /* 去除下划线 */
+    transition: color 0.3s; /* 添加字体颜色过渡效果 */
+}
+
+/* 列表项链接悬停效果 */
+section li a:hover {
+    color: #007bff; /* 悬停时改变字体颜色 */
+}
+	</style>
 </head>
 <body>
-    
-    <!-- 横排页面 -->
+    <!-- 导航栏部分 -->
     <nav>
         <div class="logo">
+            <!-- Logo图片 -->
             <img src="../img/index01/001.png" alt="Logo Image">
         </div>
         
+        <!-- 导航链接 -->
         <ul class="nav-links">
             <li><a href="./index.html" style="color: black;">网站首页</a></li>
             <li><a href="./about.html" style="color: black;">关于作者</a></li>
             <li><a href="./map.html" style="color: black;">旅游路线</a></li>
             <li><a href="./test.html" style="color: black;">学习案例</a></li>
             <li><a href="./call.html" style="color: black;">联系我们</a></li>
+            <!-- 登录和注册按钮 -->
             <li><button class="login-button" onclick="window.location.href ='./sign.html'">登录</button></li>
             <li><button class="join-button" onclick="window.location.href ='./login.html'">注册</button></li>
         </ul>
     </nav>
-	<div class="slider-container">
-	    <div class="slider">
-	        <a href="#" class="prev">&#10094;</a> <!-- 左箭头 -->
-	        <a href="#" class="next">&#10095;</a> <!-- 右箭头 -->
-	        <div class="slides">
-	            <img class="slide" src="../img/index/001 (4).jpg" alt="Slide 1">
-	            <img class="slide" src="../img/index/002.jpg" alt="Slide 2">
-	            <img class="slide" src="../img/index/001 (3).jpg" alt="Slide 3">
-	        </div>
-	    </div>
-	</div>
-	<header>
-		
-	<nav>
-		
-	<ul>
-	<li><a href=" ">主页</a ></li>
-	<li><a href="#">目的地</a ></li>
-	<li><a href="#">旅游套餐</a ></li>
-	</ul>
-	</nav>
-	</header>
-	<main>
-	<section id="home">
-	<h1>欢迎来到旅游网站！</h1>
-	<p>我们提供全球各地的旅游目的地和套餐，让您尽情享受旅行的乐趣。</p >
-	<a href="#destination">查看目的地</a >
-	<a href="#package">查看套餐</a >
-	</section>
-	<section id="destination">
-	<h1>目的地</h1>
-	<ul>
-	<li><a href="http://sa.yntllx.online/?qhclickid=f017a20ead7240ad">丽江古城</a ></li>
-	<li><a href="http://qdcks.hwlyv.cn/sxbb/sxb.html">平遥古城</a ></li>
-	<li><a href="http://szbj.qianjdf.cn/rhr84a85jez3/index.html?qhclickid=2f16675666824840&kf_uid=51071&kf_n=xiaotaozi">北京</a ></li>
-	<li><a href="http://lh360.mclxw.com/0mrnhs88bgz9/index.html?kf_uid=93774&kf_n=ahao">上海</a ></li>
-	<li><a href="https://you.ctrip.com/place/guangzhou152.html">广州</a ></li>
-	<li><a href="https://www.maigoo.com/top/401443.html">深圳</a ></li>
-	</ul>
-	</section>
-	<section id="package">
-	<h1>旅游套餐</h1>
-	<ul>
-	<li><a href="https://baijiahao.baidu.com/s?id=1769839500663200176">北京三日游</a ></li>
-	<li><a href="http://qly.gzyqtlxs.com/details/a00149428e1f054b/index.html?source=360&plan=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%94%BB%E7%95%A5&unit=%E6%94%BB%E7%95%A5&keyword=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5&e_keywordid=66080587090">上海迪士尼套餐</a ></li>
-	<li><a href="https://www.ly.com/scenery/BookSceneryTicket_12851.html">广州长隆套餐</a ></li>
-	<li><a href="http://sz.happyvalley.cn/frmfood.aspx">深圳欢乐谷套餐</a ></li>
-	</ul>
-	</section>
-	</main>
-	<footer>
-	<p>&copy; 2021 旅游网站</p >
-	</footer>
-	<div class="footer">
-		© 版权所有
-	  </div>
 
+    <!-- 轮播图容器 -->
+    <div class="slider-container">
+        <div class="slider">
+            <!-- 轮播图左右箭头 -->
+            <a href="#" class="prev">&#10094;</a>
+            <a href="#" class="next">&#10095;</a>
+            <!-- 轮播图图片 -->
+            <div class="slides">
+                <img class="slide" src="../img/test/006 (1).jpeg" alt="Slide 1">
+                <img class="slide" src="../img/test/006 (1).jpg" alt="Slide 2">
+                <img class="slide" src="../img/test/006 (2).jpg" alt="Slide 3">
+				<img class="slide" src="../img/test/006 (4).jpeg" alt="Slide 2">
+                <img class="slide" src="../img/test/006 (3).jpeg" alt="Slide 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 首页部分 -->
+        <section id="home">
+            <h1>欢迎来到旅游网站！</h1>
+            <p>我们提供全球各地的旅游目的地和套餐，让您尽情享受旅行的乐趣。</p>
+            <!-- 目的地和套餐链接 -->
+            <a href="#destination">查看目的地</a>
+            <a href="#package">查看套餐</a>
+        </section>
+        
+        <!-- 目的地部分 -->
+        <section id="destination">
+            <h1>目的地</h1>
+            <ul>
+                <!-- 各个目的地链接 -->
+                <li><a href="http://sa.yntllx.online/?qhclickid=f017a20ead7240ad">丽江古城</a></li>
+                <li><a href="http://qdcks.hwlyv.cn/sxbb/sxb.html">平遥古城</a></li>
+                <li><a href="http://szbj.qianjdf.cn/rhr84a85jez3/index.html?qhclickid=2f16675666824840&kf_uid=51071&kf_n=xiaotaozi">北京</a></li>
+                <li><a href="http://lh360.mclxw.com/0mrnhs88bgz9/index.html?kf_uid=93774&kf_n=ahao">上海</a></li>
+                <li><a href="https://you.ctrip.com/place/guangzhou152.html">广州</a></li>
+                <li><a href="https://www.maigoo.com/top/401443.html">深圳</a></li>
+            </ul>
+        </section>
+        
+        <!-- 旅游套餐部分 -->
+        <section id="package">
+            <h1>旅游套餐</h1>
+            <ul>
+                <!-- 各个旅游套餐链接 -->
+                <li><a href="https://baijiahao.baidu.com/s?id=1769839500663200176">北京三日游</a></li>
+                <li><a href="http://qly.gzyqtlxs.com/details/a00149428e1f054b/index.html?source=360&plan=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%94%BB%E7%95%A5&unit=%E6%94%BB%E7%95%A5&keyword=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5&e_keywordid=66080587090">上海迪士尼套餐</a></li>
+                <li><a href="https://www.ly.com/scenery/BookSceneryTicket_12851.html">广州长隆套餐</a></li>
+                <li><a href="http://sz.happyvalley.cn/frmfood.aspx">深圳欢乐谷套餐</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <!-- 页脚部分 -->
+	<div class="footer">
+		© 版权所有 邮箱2536909166@qq.com
+	  </div>
 </body>
 </html>
+<!-- 页面底部引入外部JavaScript文件 -->
 <script src="../js/script.js"></script>

@@ -4,7 +4,7 @@
 * {
     margin: 0px;
     border: 0;
-    cursor: url("../image/hand.png"), default;
+    cursor: url("../img/map/1000\ \(7\).jpeg"), default;
 }
 
  ::-webkit-scrollbar {
@@ -28,7 +28,7 @@
 }
 
 .beij {
-    background-image: url(../image/bj.jpeg);
+    background-image: url(../img/map/1000\ \(8\).jpeg);
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100vh;
@@ -119,7 +119,7 @@
 }
 
 #wai {
-    background-image: url("https://pic.imgdb.cn/item/6278fcfc09475431297fe50c.png");
+    background-image: url("../img/map/素材风景图\ -\ 2024-06-01T234429.168.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
     /* display: flex; */
